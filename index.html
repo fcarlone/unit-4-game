@@ -9,6 +9,8 @@
   <!-- CSS files -->
   <link rel="stylesheet" href="assets/css/reset.css">
   <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow|Fjalla+One|Noto+Sans" rel="stylesheet">
 </head>
 
 <body>
@@ -20,26 +22,30 @@
 
   <!-- Game Instructions -->
   <div class="game-instructions">
-    Instructions: Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis at consequatur, culpa ex dolorem natus
-    sint accusamus
-    minima sunt saepe ab vero, fugiat sequi quam magni id sed voluptates. Repudiandae.
+    <p>Instructions: </p>
+    <p>A random number is generated to start the game.</p>
+    <p>You are given four crystals. Each crystal is assigned a unique value.</p>
+    <p>The value of each crystal is hidden until you click on it.</p>
+    <p>Your mission is to keep adding to your score by clicking on the crystals. </p>
+    <p>You win by matching the Random Number. You loss if your score is great than the Random Number.</p>
   </div>
 
-  <!-- Random Generated Number for User to achieve -->
-  <div class="random-number">
-    <p>Random Number: <a id="generated-number"></a>
-    </p>
-  </div>
 
-  <!-- Scoreboard -->
-  <div class="scoreboard">
-    <p><a id="display-message"></a></p>
-    <p>Wins: <a id="display-wins"></a></p>
-    <p>Losses: <a id="display-losses"></a></p>
+  <div class="scoreboard-container">
+    <!-- Random Generated Number for User to achieve -->
+    <div class="random-number">
+      <p>Random Number: <a id="generated-number"></a></p>
+    </div>
+    <!-- Scoreboard -->
+    <div class="scoreboard">
+      <p><a id="display-message"></a></p>
+      <p>Wins: <a id="display-wins"></a></p>
+      <p>Losses: <a id="display-losses"></a></p>
+    </div>
   </div>
 
   <!-- Images for User to Select -->
-  <div class="game-images">
+  <div class="game-images-container">
     <img id="image-one" src="assets/images/1.jpg" alt="crystal image one"></img>
     <img id="image-two" src="assets/images/2.jpg" alt="crystal image two"></img>
     <img id="image-three" src="assets/images/3.jpg" alt="crystal image three"></img>
@@ -52,9 +58,8 @@
   </div>
 
   <!-- Number User Selected -->
-  <div class="number-selected">
-    <p>Crystal Value: <a id="display-number-selected"></a>
-    </p>
+  <div class="crystal-selected">
+    <p>Crystal Value: <a id="display-crystal-selected"></a></p>
   </div>
 
   <!-- jQuery -->

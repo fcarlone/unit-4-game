@@ -26,7 +26,7 @@ $(document).ready(function () {
   const generateCrystalValues = () => {
     if (crystalValues.length < 4) {
       let randomCrystalValue = Math.floor((Math.random() * 12) + 1);
-      // Check if number was already generated - if not push to crystalValues array
+      // Check if the number was already generated - if not push to crystalValues array
       if (!crystalValues.includes(randomCrystalValue)) {
         crystalValues.push(randomCrystalValue)
       }
@@ -39,7 +39,7 @@ $(document).ready(function () {
   // Set random generated crystal value attribute to image one
   $("#image-one").on("click", function () {
     let imageValueOne = crystalValues[0];
-    $("#display-number-selected").text(imageValueOne)
+    $("#display-crystal-selected").text(imageValueOne)
     userScore += imageValueOne;
     $("#display-user-score").text(userScore)
     checkScore(userScore, generatedGameNumber)
@@ -48,7 +48,7 @@ $(document).ready(function () {
   // Set random generated crystal value attribute to image two
   $("#image-two").on("click", function () {
     let imageValueTwo = crystalValues[1];
-    $("#display-number-selected").text(imageValueTwo)
+    $("#display-crystal-selected").text(imageValueTwo)
     userScore += imageValueTwo;
     $("#display-user-score").text(userScore)
     checkScore(userScore, generatedGameNumber)
@@ -57,7 +57,7 @@ $(document).ready(function () {
   // Set random generated crystal value attribute to image three
   $("#image-three").on("click", function () {
     let imageValueThree = crystalValues[2];
-    $("#display-number-selected").text(imageValueThree)
+    $("#display-crystal-selected").text(imageValueThree)
     userScore += imageValueThree;
     $("#display-user-score").text(userScore)
     checkScore(userScore, generatedGameNumber)
@@ -66,7 +66,7 @@ $(document).ready(function () {
   // Set random generated crystal value attribute to image four
   $("#image-four").on("click", function () {
     let imageValueFour = crystalValues[3];
-    $("#display-number-selected").text(imageValueFour)
+    $("#display-crystal-selected").text(imageValueFour)
     userScore += imageValueFour;
     $("#display-user-score").text(userScore)
     checkScore(userScore, generatedGameNumber)
@@ -110,7 +110,7 @@ $(document).ready(function () {
     // Reset Values
     userScore = 0;
     $("#display-user-score").text(userScore);
-    $("#display-number-selected").text("");
+    $("#display-crystal-selected").text("");
     // test console.logs
     console.log(`Global Random generated number ${generatedGameNumber}`);
     console.log(`Global Random crystalValues ${crystalValues}`);
