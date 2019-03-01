@@ -4,11 +4,15 @@ $(document).ready(function () {
 
   // Global Variables
   // User score
-  let userScore = 0;
-  // Value assigned to the (4) crystals
-  let crystalValues = [];
+  let userScore;
   // Score the user has to attain 
   let generatedGameNumber = 0;
+  // Value assigned to the (4) crystals
+  let crystalValues = [];
+  // Wins counter
+  let userWins = 0;
+  // Losses counter 
+  let userLosses = 0;
 
   // Generate range of random numbers between 19 - 120 for Game Number
   const randomNumber = () => {
@@ -35,50 +39,87 @@ $(document).ready(function () {
   // Set random generated crystal value attribute to image one
   $("#image-one").on("click", function () {
     let imageValueOne = crystalValues[0];
-    console.log(`on click crystalValues Array ${imageValueOne}`)
     $("#display-number-selected").text(imageValueOne)
     userScore += imageValueOne;
-    console.log(`onclick user score ${userScore}`)
     $("#display-user-score").text(userScore)
+    checkScore(userScore, generatedGameNumber)
   });
 
   // Set random generated crystal value attribute to image two
   $("#image-two").on("click", function () {
     let imageValueTwo = crystalValues[1];
-    console.log(`on click crystalValues Array ${imageValueTwo}`)
     $("#display-number-selected").text(imageValueTwo)
     userScore += imageValueTwo;
-    console.log(`onclick user score ${userScore}`)
     $("#display-user-score").text(userScore)
+    checkScore(userScore, generatedGameNumber)
   });
 
   // Set random generated crystal value attribute to image three
   $("#image-three").on("click", function () {
     let imageValueThree = crystalValues[2];
-    console.log(`on click crystalValues Array ${imageValueThree}`)
     $("#display-number-selected").text(imageValueThree)
     userScore += imageValueThree;
-    console.log(`onclick user score ${userScore}`)
     $("#display-user-score").text(userScore)
+    checkScore(userScore, generatedGameNumber)
   });
 
   // Set random generated crystal value attribute to image four
   $("#image-four").on("click", function () {
     let imageValueFour = crystalValues[3];
-    console.log(`on click crystalValues Array ${imageValueFour}`)
     $("#display-number-selected").text(imageValueFour)
     userScore += imageValueFour;
-    console.log(`onclick user score ${userScore}`)
     $("#display-user-score").text(userScore)
+    checkScore(userScore, generatedGameNumber)
   });
 
+  // Check user score against game number
+  const checkScore = (userScore, generatedGameNumber) => {
+    // If userScore is greater than generatedGameNumber
+    if (userScore > generatedGameNumber) {
+      // Increase user losses counter by 1;
+      userLosses += 1;
+      // Display message to user
+      $("#display-message").text("You Lose")
+      $("#display-losses").text(userLosses);
+      // Start new game
+      crystalValues = [];
+      startGame();
+      // Else if userScore matches generatedGameNumber
+    } else if (userScore === generatedGameNumber) {
+      // Increase user wins counter by 1;
+      userWins += 1;
+      // Display message to user
+      $("#display-message").text("You Won!!!")
+      $("#display-wins").text(userWins);
+      // Start new game
+      crystalValues = [];
+      startGame();
+    }
+  };
+
   // Display initial user score
-  $("#display-user-score").append(userScore)
-  // Invoke functions test and console.logs
-  randomNumber();
-  generateCrystalValues();
-  console.log(`Global Random generated number ${generatedGameNumber}`)
-  console.log(`Global Random score ${userScore}`)
+  $("#display-user-score").text(userScore)
+  $("#display-wins").text(userWins);
+  $("#display-losses").text(userLosses);
+
+  // Invoke functions test and 
+  const startGame = () => {
+    // Invoke game functions
+    randomNumber();
+    generateCrystalValues();
+    // Reset Values
+    userScore = 0;
+    $("#display-user-score").text(userScore);
+    $("#display-number-selected").text("");
+    // test console.logs
+    console.log(`Global Random generated number ${generatedGameNumber}`);
+    console.log(`Global Random crystalValues ${crystalValues}`);
+  }
+  checkScore(userScore, generatedGameNumber)
+  startGame();
+
+
+
 });
 
 
