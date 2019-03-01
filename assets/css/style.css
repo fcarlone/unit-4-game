@@ -4,23 +4,6 @@ body {
   margin: 0;
 }
 
-#image-one,
-#image-two,
-#image-three,
-#image-four {
-  width: 150px;
-  height: 150px;
-  border: solid white;
-}
-
-#image-one:hover,
-#image-two:hover,
-#image-three:hover,
-#image-four:hover {
-  border: solid black;
-  cursor: pointer;
-}
-
 h1 {
   text-align: center;
   vertical-align: middle;
@@ -79,7 +62,7 @@ h1 {
   float: left;
   height: 100px;
   font-size: 20px;
-  background-color: magenta;
+  background-color: lightblue;
   padding-left: 1rem;
   padding-top: 2rem;
   margin-left: 5px;
@@ -92,6 +75,19 @@ h1 {
 .game-images-container {
   padding-top: 150px;
   text-align: center;
+}
+
+.display-game-image {
+  width: 150px;
+  height: 150px;
+  padding: 1rem;
+}
+
+.display-game-image:hover {
+  width: 175px;
+  height: 175px;
+  padding: 0;
+  cursor: pointer;
 }
 
 .user-score,
@@ -111,3 +107,22 @@ h1 {
   height: 75px;
   margin-bottom: 25px;
 }
+
+/* Leaving styling to review with instructor */
+
+/* #image-one,
+#image-two,
+#image-three,
+#image-four {
+  width: 150px;
+  height: 150px;
+  border: solid white;
+} */
+
+/* #image-one:hover,
+#image-two:hover,
+#image-three:hover,
+#image-four:hover {
+  border: solid black;
+  cursor: pointer;
+} */
