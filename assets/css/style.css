@@ -10,6 +10,15 @@ body {
 #image-four {
   width: 150px;
   height: 150px;
+  border: solid white;
+}
+
+#image-one:hover,
+#image-two:hover,
+#image-three:hover,
+#image-four:hover {
+  border: solid black;
+  cursor: pointer;
 }
 
 h1 {
@@ -43,7 +52,7 @@ h1 {
 }
 
 .game-instructions p {
-  line-height: 2rem;
+  line-height: 2.25rem;
 }
 
 .scoreboard-container {
