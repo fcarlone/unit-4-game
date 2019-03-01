@@ -2,24 +2,27 @@
 // jQuery
 $(document).ready(function () {
 
+  // Global Variables
   // User score
   let userScore = 0;
   // Value assigned to the (4) crystals
   let crystalValues = [];
-  // Random generated the user has to get to
+  // Score the user has to attain 
   let generatedGameNumber = 0;
 
-  // Generate range for random number between 19 - 120
+  // Generate range of random numbers between 19 - 120 for Game Number
   const randomNumber = () => {
     let rand = Math.floor(Math.random() * (120 - 19) + 19);
     generatedGameNumber = rand;
-    $("#generated-number").text(rand)
+    // Display random number to game website
+    $("#generated-number").text(generatedGameNumber)
   };
 
   // Generate (4) random numbers for crystal values between 1 - 12
   const generateCrystalValues = () => {
     if (crystalValues.length < 4) {
       let randomCrystalValue = Math.floor((Math.random() * 12) + 1);
+      // Check if number was already generated - if not push to crystalValues array
       if (!crystalValues.includes(randomCrystalValue)) {
         crystalValues.push(randomCrystalValue)
       }
